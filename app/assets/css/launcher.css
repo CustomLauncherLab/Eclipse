@@ -44,6 +44,7 @@ p {
 body, button {
     font-family: 'Avenir Book';
     color: white;
+    font-size: 23;
 }
 
 /*body {
@@ -118,7 +119,7 @@ body, button {
 #frameButtonDockWin {
     -webkit-app-region: no-drag !important;
     position: relative;
-    top: -2px;
+    top: -9px;
     right: -2px;
     height: 22px;
 }
@@ -1093,7 +1094,7 @@ body, button {
     justify-content: center;
 }
 #settingsNavHeaderText {
-    font-size: 20px;
+    font-size: 35px;
 }
 
 /* Navigation items outer container. */
@@ -1117,7 +1118,6 @@ body, button {
     background: none;
     border: none;
     text-align: left;
-    margin: 5px 0px;
     padding: 0px 20px;
     color: grey;
     cursor: pointer;
@@ -1152,6 +1152,7 @@ body, button {
     height: 1px;
     background: rgba(126, 126, 126, 0.57);
     margin-left: auto;
+    margin-top: 15px;
     margin-bottom: 25px;
 }
 
@@ -1221,7 +1222,7 @@ body, button {
     margin-bottom: 20px;
 }
 .settingsTabHeaderText {
-    font-size: 20px;
+    font-size: 30px;
     font-family: 'Avenir Medium';
 }
 .settingsTabHeaderDesc {
@@ -2489,7 +2490,7 @@ input:checked + .toggleSwitchSlider:before {
     transition: top 2s ease;
     top: 0px;
     height: 100%;
-    width: 33%;
+    width: 45%;
     display: inline-flex;
     justify-content: center;
 }
@@ -2505,7 +2506,7 @@ input:checked + .toggleSwitchSlider:before {
     transition: top 2s ease;
     top: 0px;
     height: 100%;
-    width: 34%;
+    width: 50%;
     display: inline-flex;
     justify-content: center;
 }
@@ -2520,7 +2521,7 @@ input:checked + .toggleSwitchSlider:before {
     transition: top 2s ease;
     top: 0px;
     height: 100%;
-    width: 33%;
+    width: 40%;
     display: inline-flex;
 }
 
@@ -3013,7 +3014,7 @@ input:checked + .toggleSwitchSlider:before {
 
 /* User profile name text. */
 #user_text {
-    font-size: 12px;
+    font-size: 25px;
     min-width: 135px;
     font-weight: 900;
     letter-spacing: 1px;
@@ -3047,12 +3048,13 @@ input:checked + .toggleSwitchSlider:before {
     justify-content: center;
     align-items: center;
     height: 27px;
+    margin-bottom: 0.1em
 }
 
 /* Divider bar between the external and internal icons. */
 .mediaDivider {
-    height: 1px;
-    width: 14px;
+    height: 2px;
+    width: 20px;
     background: rgb(255, 255, 255);
     margin: 10px 0px;
 }
@@ -3060,16 +3062,15 @@ input:checked + .toggleSwitchSlider:before {
 /* Social media icon shared styles. */
 .mediaSVG {
     fill: #ffffff;
-    height: 12px;
+    height: 30px;
     transition: 0.25s ease;
     cursor: pointer;
-    height: 12px;
     width: 25px;
 }
 .mediaSVG:hover,
 .mediaURL:focus .mediaSVG,
 .mediaSVG:active {
-    height: 20px;
+    height: 23px;
 }
 
 /* Social media URL shared styles. */
@@ -3092,18 +3093,29 @@ input:checked + .toggleSwitchSlider:before {
 }
 
 /* Settings icon colors. */
-#settingsSVG {
+#settingsSVG,
+#screenshotsSVG {
     stroke: #ffffff;
-    height: 15px;
+    height: 100%;
 }
 .mediaButton:hover #settingsSVG,
 .mediaButton:focus #settingsSVG,
-.mediaButton:active #settingsSVG {
+.mediaButton:active #settingsSVG,
+.mediaButton:hover #screenshotsSVG,
+.mediaButton:focus #screenshotsSVG,
+.mediaButton:active #screenshotsSVG {
     height: 23px;
 }
 
 /* Settings tooltip styles. */
 #settingsTooltip {
+    right: 130%;
+}
+#screenshotsTooltip {
+    right: 90%
+}
+#settingsTooltip,
+#screenshotsTooltip {
     visibility: hidden;
     opacity: 0;
     width: 75px;
@@ -3113,12 +3125,13 @@ input:checked + .toggleSwitchSlider:before {
     border-radius: 4px;
     position: absolute;
     z-index: 1;
-    right: 130%;
+    /* right: 130%; */
     font-size: 12px;
     line-height: 20px;
     transition: visibility 0s linear 0.25s, opacity 0.25s ease;
 }
-#settingsTooltip::after {
+#settingsTooltip::after,
+#screenshotsTooltip::after {
     content: " ";
     position: absolute;
     top: 50%;
@@ -3130,7 +3143,10 @@ input:checked + .toggleSwitchSlider:before {
 }
 .mediaButton:hover #settingsTooltip,
 .mediaButton:focus #settingsTooltip,
-.mediaButton:active #settingsTooltip {
+.mediaButton:active #settingsTooltip,
+.mediaButton:hover #screenshotsTooltip,
+.mediaButton:focus #screenshotsTooltip,
+.mediaButton:active #screenshotsTooltip {
     visibility: visible;
     opacity: 1;
     transition-delay:0s;
@@ -3181,7 +3197,7 @@ input:checked + .toggleSwitchSlider:before {
 
 /* Style for a general label on the bottom of the landing view. */
 .bot_label {
-    font-size: 9px;
+    font-size: 15px;
     letter-spacing: 1px;
     font-weight: bold;
     text-shadow: 0px 0px 0px #bebcbb;
@@ -3203,13 +3219,13 @@ input:checked + .toggleSwitchSlider:before {
 /* Maintains maximum width on the status bar. */
 #server_status_wrapper {
     display: inline-flex;
-    width: 75px;
+    width: 200px;
 }
 
 /* Span which displays the player count of the selected server. */
 #player_count {
     color: #949494;
-    font-size: 8px;
+    font-size: 15px;
     font-weight: 900;
     text-shadow: 0px 0px 20px #949494;
     margin-left: 10px;
